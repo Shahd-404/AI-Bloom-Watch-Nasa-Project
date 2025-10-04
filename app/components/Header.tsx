@@ -103,9 +103,12 @@ function Header() {
             About
           </Link>
           {/* التعديل الرئيسي هنا: href="/" والنص "Add-bloom" */}
-          <a href="http://127.0.0.1:5500/app/Add-bloom/index.html" className="px-5 py-2 text-lg font-bold rounded-full bg-[#fdd835] text-gray-900 shadow-lg hover:bg-[#fbc02d] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl flex items-center gap-2">
+          <Link
+            href="/add-bloom"
+            className="px-5 py-2 text-lg font-bold rounded-full bg-[#fdd835] text-gray-900 shadow-lg hover:bg-[#fbc02d] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl flex items-center gap-2"
+          >
             <LayoutDashboard size={20} /> Add-bloom
-          </a>
+          </Link>
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full bg-white/30 text-white dark:bg-gray-700/30 dark:text-gray-200 backdrop-blur-md hover:bg-white/50 dark:hover:bg-gray-700/50 transition-colors duration-300 shadow-md"
