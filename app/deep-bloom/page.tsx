@@ -17,11 +17,15 @@ import {
   TrendingUp,
   Sun,
 } from "lucide-react";
-import { color } from "chart.js/helpers";
 
+
+type ModalContent = {
+  imageSrc: string;
+  altText: string;
+} | null;
 
 const DeepBloomPage = () => {
-  const [modalContent, setModalContent] = useState(null);
+  const [modalContent, setModalContent] = useState<ModalContent>(null);
 
   const handleImageClick = (imageSrc: string, altText: string) => {
     setModalContent({ imageSrc, altText });

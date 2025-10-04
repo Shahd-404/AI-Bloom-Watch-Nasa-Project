@@ -6,7 +6,7 @@ import { useEffect } from "react";
 // Function to create custom icons based on data type
 const customIcon = (type: string) => {
   let iconUrl: string;
-  let shadowUrl: string = "https://unpkg.com/leaflet-color-markers/img/marker-shadow.png";
+  const shadowUrl: string = "https://unpkg.com/leaflet-color-markers/img/marker-shadow.png";
 
   if (type === "Blooms") {
     iconUrl = "https://unpkg.com/leaflet-color-markers/img/marker-icon-2x-green.png";
