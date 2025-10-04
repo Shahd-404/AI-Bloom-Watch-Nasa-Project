@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* فونت */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+html, body { height: 100%; }
+:root { color-scheme: light; }
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* نعرّف الظل المخصص هنا */
+@layer utilities {
+  .shadow-soft {
+    box-shadow: 0 10px 25px -10px rgba(0,0,0,.1);
+  }
+}
+
+.card {
+  @apply rounded-2xl border border-gray-200 bg-white shadow-soft;
+}
+.dark .card { @apply border-gray-800 bg-neutral-900; }
+
+.subtle { @apply text-gray-600 dark:text-gray-400; }
+.h1 { @apply text-3xl md:text-4xl font-bold; }

@@ -1,0 +1,36 @@
+bloom-trends-app/
+├─ package.json
+├─ tsconfig.json
+├─ vite.config.ts
+├─ tailwind.config.js
+├─ postcss.config.js
+├─ index.html
+├─ README.md
+├─ public/
+│  └─ bloom_data.json
+└─ src/
+   ├─ index.css
+   ├─ main.tsx
+   ├─ App.tsx
+   ├─ types.ts
+   ├─ lib/
+   │  └─ data.ts
+   └─ components/
+      ├─ Controls.tsx
+      ├─ YearCompare.tsx
+      └─ StageTimeline.tsx
+
+
+bloom-trends-app/
+  src/
+    types.ts
+    lib/
+      data.ts
+    components/
+      StageTimeline.tsx
+      YearCompare.tsx
+      Controls.tsx
+
+
+npm i -D @vitejs/plugin-react
+notepad .\vite.config.ts

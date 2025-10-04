@@ -1,0 +1,37 @@
+1 - جمعت داتا من ال reports اللي في الموقع دا 
+https://theodorepayne.org/learn/wildflower-hotline/ 
+واللي جبته من ال مصدر رقم 4 
+مكنش المصدر مباشره لكنه ساعدني الاقي البيانات دي 
+ودا مجمع بيانات اسبوعيه لحاله الازهار كل اسبوع من بدايه موسم الازهار في وسط وجنوب كاليفورنيا (مارس ) حتي نهايه شهر مايو 
+من سنه 2013 ل سنه 2025
+2 - بحثت عن بيانات لاحوال الطقس في ناسا ولقيت ملف جامع للداتا دي من 1984 تقريبا لسنه 2022 واستخدمت البيانات الاسبوعيه الخاصه بالمنطقه 11 في usa واللي بتعبر عن california 
+3 - preprocessing للداتا وتقريب التواريخ للتواريخ المستخدمه سابقا من ال reports المجمعه وعمل دمج للبيانات 
+4 - تدريب Random Forest Regressor علي البيانات المتاحه مع مواعيد الازهار والتواريخ وأكمال باقي الداتا للاعوام 2023 / 2024/2025
+ليه استخدمنا ال model دا 
+بيتعامل كويس مع الداتا اللي فيها علاقات غير خطية ومع فئات (Bloom Stage) + أرقام (week, month, …).
+
+مش محتاج نفترض خطية أو توزيع معين زي الـLinear Models.
+
+مرن جدًا وقدر يدينا MAE(Mean Absolute Error) ~1–2°C على التدريب.
+
+5 - غيرنا الرموز لاسماء مفهومه 
+T2M → AirTemp_avg
+
+T2M_MAX → AirTemp_max
+
+T2M_MIN → AirTemp_min
+
+PRECTOTCORR → Precipitation
+
+RH2M → Humidity_rel
+
+VPD → VaporPressureDeficit
+
+ET0 → Evapotranspiration_ref
+
+QV2M → SpecificHumidity
+
+ALLSKY_SFC_SW_DWN → SolarRadiation_sw
+
+PS → SurfacePressure
+

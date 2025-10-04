@@ -1,0 +1,59 @@
+:root{
+  color-scheme: dark;
+  --glass: rgba(16,18,26,.55);
+  --glass-strong: rgba(16,18,26,.75);
+  --stroke: rgba(255,255,255,.10);
+  --txt: #eef2ff;
+  --muted: #c7d2fe;
+  --ok:#9ef7b1; --warn:#ffd38a; --err:#ff9aa2;
+  --teal:#22d3ee; --lime:#84cc16;
+}
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{margin:0;font-family:system-ui,Segoe UI,Arial,sans-serif;color:var(--txt);background:#0b1320}
+
+.bg{position:fixed;inset:0;background:url('/BloomWatch.jpg') center/cover no-repeat;filter:brightness(.62);z-index:-1}
+
+.page{max-width:1200px;margin:28px auto 72px;padding:0 18px}
+header h1{text-align:center;margin:0 0 16px;font-size:28px;letter-spacing:.3px;text-shadow:0 8px 28px rgba(0,0,0,.45)}
+
+.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:10px}
+.chip{border:1px solid var(--stroke);padding:6px 10px;border-radius:999px;background:rgba(15,20,28,.55);backdrop-filter:blur(8px);font-size:12px}
+
+.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.card{padding:18px 16px;border-radius:18px;background:var(--glass);backdrop-filter:blur(8px);
+  border:1px solid var(--stroke);box-shadow:0 8px 26px rgba(0,0,0,.25);text-align:center}
+.card .icon{display:flex;align-items:center;justify-content:center;margin-bottom:8px;opacity:.95}
+.card .title{font-size:13px;color:var(--muted)}
+.card .value{font-size:20px;font-weight:800;margin-top:2px}
+.card .hint{font-size:12px;opacity:.9;margin-top:6px;color:#dbeafe}
+
+.panel{margin-top:22px;padding:18px;border-radius:18px;background:var(--glass-strong);backdrop-filter:blur(10px);
+  border:1px solid var(--stroke);box-shadow:0 10px 30px rgba(0,0,0,.35);text-align:center}
+.stage{font-size:18px;font-weight:800}
+.stage.ok{color:var(--ok)}
+.stage.no{color:var(--warn)}
+.subchips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:10px 0 6px}
+
+.refresh{margin:14px auto 0;display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:14px;font-weight:700;
+  border:1px solid var(--stroke);color:var(--txt);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));cursor:pointer}
+.refresh:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.refresh:active{transform:translateY(0)}
+.refresh:disabled{opacity:.6;cursor:not-allowed}
+
+/* Season slider */
+.season{margin-top:10px;text-align:center}
+.season-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.season h3{margin:0;font-size:16px}
+.legend{display:flex;gap:8px;flex-wrap:wrap}
+.slider{width:100%;appearance:none;height:10px;border-radius:999px;background:
+  linear-gradient(90deg,#38bdf8 0 20%,#22c55e 20% 40%,#f59e0b 40% 60%,#fb7185 60% 80%,#64748b 80% 100%);outline:none}
+.slider::-webkit-slider-thumb{appearance:none;width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid #22d3ee;box-shadow:0 0 0 4px rgba(34,211,238,.25)}
+.slider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid #22d3ee;box-shadow:0 0 0 4px rgba(34,211,238,.25)}
+.season-foot{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.stage-pill{padding:4px 10px;border-radius:999px;background:rgba(34,211,238,.15);border:1px solid rgba(34,211,238,.35)}
+
+/* Map */
+.map-panel{margin-top:24px}
+.map-panel h2{margin:0 0 10px}
+.map{width:100%;height:360px;border-radius:18px;border:1px solid var(--stroke);overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35)}

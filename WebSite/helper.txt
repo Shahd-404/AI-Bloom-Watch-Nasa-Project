@@ -1,0 +1,42 @@
+F:\Nasa project\WebSite
+│  package.json
+│  index.html
+│  postcss.config.js
+│  tailwind.config.js
+│  tsconfig.json
+│  vite.config.ts
+│
+├─public
+│      BloomWatchHero.png   ← (انسخي صورتك هنا وأعيدي تسميتها لهذا الاسم)
+│
+└─src
+    │  main.tsx
+    │  App.tsx
+    │
+    ├─styles
+    │      index.css
+    │
+    ├─components
+    │  ├─ui
+    │  │      Button.tsx
+    │  │      Card.tsx
+    │  └─layout
+    │         HeaderTabs.tsx
+    │
+    └─features
+       ├─explore
+       │      ExplorePanel.tsx
+       ├─analysis
+       │      AnalysisPanel.tsx
+       ├─uploads
+       │      UploadsPanel.tsx
+       └─reports
+              ReportsPanel.tsx
+
+------------------------------
+
+npm i -D @vitejs/plugin-react
+
+npm install 
+npm run dev 
+

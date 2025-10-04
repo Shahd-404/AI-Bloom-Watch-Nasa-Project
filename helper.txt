@@ -1,0 +1,83 @@
+Bloomie/
+  backend/
+    main.py
+    bloom_model.py
+    openrouter_client.py
+    requirements.txt
+  frontend/
+    index.html
+------- 
+to run Bloomy 
+
+python -m venv .venv
+.venv\Scripts\activate
+python -m pip install --upgrade pip setuptools wheel
+pip install --pre --only-binary=:all: numpy
+pip install --pre --only-binary=:all: pandas
+pip install --pre --only-binary=:all: scikit-learn
+pip install fastapi uvicorn httpx joblib python-dotenv
+
+
+python -c "import numpy, pandas, sklearn; print(numpy.__version__, pandas.__version__, sklearn.__version__)"
+
+
+pip install --upgrade scikit-learn
+
+pip install --pre --only-binary=:all: pandas
+
+cd Bloomie
+# 1) فعل venv
+.\backend\.venv\Scripts\Activate.ps1
+
+# 2) ضبطي المتغيرات في نفس الجلسة (استبدلي المفتاح بمفتاح جديد آمن)
+$env:OPENROUTER_API_KEY = "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"
+$env:MODEL_GATE_PATH    = "F:\Nasa project\Bloom_model\gate_bloom_binary.joblib"
+$env:MODEL_STAGE_PATH   = "F:\Nasa project\Bloom_model\stage_multiclass.joblib"
+
+# 3) شغّلي السيرفر
+python -m uvicorn backend.main:app --reload
+
+
+افتحي 
+http://127.0.0.1:8000/docs
+
+جوه predict file 
+حطي المسار دا 
+{
+  "path": "F:/Nasa project/Bloom_Data/bloom_data.json"
+}
+-----
+
+Bloom_api/
+  server.py
+  mapper.py
+  model_io.py
+  schemas.py
+  .env.example
+requirements.txt
+
+cd "F:\Nasa project\Bloom_api"
+
+python -m venv .venv
+.\.venv\Scripts\activate        
+
+
+pip install -r requirements.txt
+
+pip install "fastapi[standard]==0.115.2"
+pip install swagger-ui-bundle==0.0.9
+
+
+python -m uvicorn server:app --reload --port 8000
+
+
+
+واقفين هنا
+{"region":"California","date":"2025-10-04","bloom_flag":"NoBloom","bloom_prob":0.0,"bloom_stage":"OutOfSeason","stage_prob":0.0}تمام 
+عايزه بقا اعرض ال data دي life ورز refresh يحدثلي القيم دي لما اضغط عليه وتحته النتيجه هل فيه bloom ولا لا والتاريخ وهكذا 
+
+
+
+
+cd "F:\Nasa project\Bloom_api"
+python -m venv .venv

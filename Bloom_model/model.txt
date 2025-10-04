@@ -1,0 +1,103 @@
+
+{
+  "numeric_features": [
+    "AirTemp_avg",
+    "AirTemp_max",
+    "AirTemp_min",
+    "Precipitation",
+    "Humidity_rel",
+    "VaporPressureDeficit",
+    "Evapotranspiration_ref",
+    "SpecificHumidity",
+    "SolarRadiation_sw",
+    "SurfacePressure"
+  ],
+  "categorical_features": [
+    "region"
+  ],
+  "time_features": [
+    "week_of_year",
+    "doy",
+    "month"
+  ],
+  "binary_labels": [
+    "NoBloom",
+    "Bloom"
+  ],
+  "stage_labels": [
+    "EoB",
+    "LPoB",
+    "MoB",
+    "PoB",
+    "SoB",
+    "SoB_super"
+  ],
+  "leaderboards": {
+    "binary": [
+      {
+        "model": "ET",
+        "acc": 0.9564283826638478,
+        "bal_acc": 0.9535268538364512,
+        "f1_macro": 0.9548130360205832
+      },
+      {
+        "model": "RF",
+        "acc": 0.953409090909091,
+        "bal_acc": 0.9496806999902976,
+        "f1_macro": 0.9516974714787672
+      },
+      {
+        "model": "HGB",
+        "acc": 0.9485795454545455,
+        "bal_acc": 0.9433352423290504,
+        "f1_macro": 0.9466622222530863
+      },
+      {
+        "model": "CalibratedLinearSVC",
+        "acc": 0.856857822410148,
+        "bal_acc": 0.8497922155816893,
+        "f1_macro": 0.8502455886244856
+      },
+      {
+        "model": "CalibratedLR",
+        "acc": 0.8101612050739957,
+        "bal_acc": 0.7990633714124427,
+        "f1_macro": 0.7992430253353963
+      }
+    ],
+    "stage": [
+      {
+        "model": "RF",
+        "acc": 0.7054378264904579,
+        "bal_acc": 0.6573958633958634,
+        "f1_macro": 0.6463901621254562
+      },
+      {
+        "model": "ET",
+        "acc": 0.6936373620584146,
+        "bal_acc": 0.6526471861471862,
+        "f1_macro": 0.6416970774323716
+      },
+      {
+        "model": "HGB",
+        "acc": 0.6735216998374893,
+        "bal_acc": 0.6171909571909572,
+        "f1_macro": 0.6051062954360168
+      }
+    ]
+  },
+  "scoring_pref": {
+    "binary": "f1_macro",
+    "stage": "f1_macro"
+  }
+}
+
+ليه اعتمدنا هنا بقا علي F1_Score 
+عندنا داتا imbalanced 
+بيحسب F1 لكل فئة على حدة وبعدين ياخد المتوسط.
+
+كده بيديك صورة عادلة: لازم الموديل يكون كويس مش بس في الفئات الكبيرة لكن كمان في الفئات الصغيرة.
+
+Binary → ExtraTrees: ممتازة (>96%).
+
+Stage → ExtraTrees: معقولة (65% F1) لكن أفضل من الباقي.
