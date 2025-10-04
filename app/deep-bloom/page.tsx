@@ -17,7 +17,6 @@ import {
   TrendingUp,
   Sun,
 } from "lucide-react";
-import { color } from "chart.js/helpers";
 
 
 type ModalContent = {
