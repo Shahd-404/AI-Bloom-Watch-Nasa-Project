@@ -131,7 +131,7 @@ const HomePage = () => {
     setModalContent(null);
   }
 
-  function handleConnectToAI(_event: MouseEvent<HTMLButtonElement, MouseEvent>): void {
+  function handleConnectToAI(_event: React.MouseEvent<HTMLButtonElement>): void {
     throw new Error('Function not implemented.');
   }
   
