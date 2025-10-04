@@ -571,7 +571,7 @@ const HomePage = () => {
                     We utilize high-resolution satellite imagery from sources like NASA Worldview Superbloom Visualizations to detect changes in color and density, which are key indicators of phenological stages.
                   </p>
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 text-left">
                   <h4 className="text-2xl font-bold text-gray-900 mb-2">AI-Powered Analysis & Spectral Signatures</h4>
                   <p className="text-gray-700">
                     Our AI models analyze satellite data to provide accurate and real-time insights, including the detection of California Superblooms and analysis of spectral signatures to map bloom dynamics.
