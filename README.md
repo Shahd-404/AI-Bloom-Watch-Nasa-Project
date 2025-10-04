@@ -1,29 +1,30 @@
 # 🌸 BloomWatch — AI Project
 
-This repository contains the **core files and main setup** for the BloomWatch web platform.
+This repository contains the **core setup and base structure** of the BloomWatch web platform.
 
-> 🔗 **Full website continuation and active development are hosted here:**
-> [https://github.com/Shahd-404/BloomWatch]([https://github.com/Shahd-404/BloomWatch](https://github.com/Shahd-404/BloomWatch))
-
----
-
-### 📘 About
-BloomWatch is a research-driven AI platform designed to monitor and visualize global **blooming stages** using environmental and satellite data.
-
-This repo includes:
-- The base frontend / API integration setup
-- Core environment configuration
-- Data folders and model references
+> 🔗 **Project continuation and full development are hosted here:**  
+> [https://github.com/Ahmed124gfhshgsgs/Elite-Team.git](https://github.com/Ahmed124gfhshgsgs/Elite-Team.git)
 
 ---
 
-### 🚀 Continue Development
-To access the **full source code, updated frontend, and live backend**, please visit:
+## 📘 About the Project
+BloomWatch is an AI-based platform designed to **analyze and visualize blooming stages** using environmental and satellite datasets.
+
+This repository includes:
+- The initial project structure and configuration  
+- Core files and early implementation  
+- Base environment and dataset references  
+
+---
+
+## 🚀 Continue Development
+For the **latest version**, **frontend updates**, and **full backend integration**, please visit:
 
 👉 **Main Repository:**  
-[https://github.com/Shahd-404/BloomWatch](https://github.com/Shahd-404/BloomWatch)
+[https://github.com/Ahmed124gfhshgsgs/Elite-Team.git](https://github.com/Ahmed124gfhshgsgs/Elite-Team.git)
 
 ---
 
+## 🧩 Credits
 **Author:** Shahd Alaa  
 **GitHub:** [@Shahd-404](https://github.com/Shahd-404)
