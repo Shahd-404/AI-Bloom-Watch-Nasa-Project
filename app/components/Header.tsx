@@ -81,8 +81,8 @@ function Header() {
         }
       `}</style>
       <nav className="container mx-auto flex justify-between items-center">
+        {/* رابط اللوجو يوجه إلى الصفحة الرئيسية */}
         <a href="/" className="logo-container">
-          {/* تم حذف فئة animate-pulse لجعل الأيقونة ثابتة */}
           <Flower size={40} className="animate-flower-color" />
           <span className="bloomwatch-logo-text dark:text-green-400">
             <span className="animate-bloom-text-color">Bloom</span><span className="text-white dark:text-white">Track</span>
@@ -101,8 +101,9 @@ function Header() {
           <a href="/about" className={navLinkClass('/about')}>
             About
           </a>
-          <a href="/dashboard" className="px-5 py-2 text-lg font-bold rounded-full bg-[#fdd835] text-gray-900 shadow-lg hover:bg-[#fbc02d] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl flex items-center gap-2">
-            <LayoutDashboard size={20} /> Dashboard
+          {/* التعديل الرئيسي هنا: href="/" والنص "Add-bloom" */}
+          <a href="http://127.0.0.1:5500/app/Add-bloom/index.html" className="px-5 py-2 text-lg font-bold rounded-full bg-[#fdd835] text-gray-900 shadow-lg hover:bg-[#fbc02d] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl flex items-center gap-2">
+            <LayoutDashboard size={20} /> Add-bloom
           </a>
           <button
             onClick={toggleTheme}

@@ -568,25 +568,25 @@ const HomePage = () => {
                 <div className="flex-1 text-left">
                   <h4 className="text-2xl font-bold text-gray-900 mb-2">Satellite Monitoring & Visualizations</h4>
                   <p className="text-gray-700">
-                    We utilize high-resolution satellite imagery from sources like **NASA Worldview Superbloom Visualizations** to detect changes in color and density, which are key indicators of phenological stages.
+                    We utilize high-resolution satellite imagery from sources like NASA Worldview Superbloom Visualizations to detect changes in color and density, which are key indicators of phenological stages.
                   </p>
                 </div>
                 <div className="flex-1 text-left">
                   <h4 className="text-2xl font-bold text-gray-900 mb-2">AI-Powered Analysis & Spectral Signatures</h4>
                   <p className="text-gray-700">
-                    Our AI models analyze satellite data to provide accurate and real-time insights, including the detection of **California Superblooms** and analysis of **spectral signatures** to map bloom dynamics.
+                    Our AI models analyze satellite data to provide accurate and real-time insights, including the detection of California Superblooms and analysis of spectral signatures to map bloom dynamics.
                   </p>
                 </div>
                 <div className="flex-1 text-left">
                   <h4 className="text-2xl font-bold text-gray-900 mb-2">Community Engagement (Ground-Truth)</h4>
                   <p className="text-gray-700">
-                    Users can upload their own observations and photos (**Ground-Truth data**), contributing to a massive, real-time dataset that enhances our models and validates satellite data, as emphasized by NASA.
+                    Users can upload their own observations and photos (Ground-Truth data), contributing to a massive, real-time dataset that enhances our models and validates satellite data, as emphasized by NASA.
                   </p>
                 </div>
               </div>
               <div className="mt-10 flex justify-center">
-                <a href="/dashboard" className="px-10 py-5 text-lg font-bold rounded-full bg-[#fdd835] text-gray-900 shadow-xl hover:bg-[#fbc02d] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl flex items-center gap-3">
-                  <LayoutDashboard size={28} /> Go to Dashboard
+                <a href="http://127.0.0.1:5500/app/Add-bloom/index.html" className="px-10 py-5 text-lg font-bold rounded-full bg-[#fdd835] text-gray-900 shadow-xl hover:bg-[#fbc02d] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl flex items-center gap-3">
+                  <LayoutDashboard size={28} /> Go to Add-bloom
                 </a>
               </div>
             </div>
@@ -637,7 +637,7 @@ const HomePage = () => {
                 <div className="flex flex-col items-center md:items-start">
                   <h4 className="font-semibold text-gray-900 mb-2">Platform</h4>
                   <a href="/map" className="hover:underline hover:text-[#FDD835] transition-colors duration-200">Map</a>
-                  <a href="/dashboard" className="hover:underline hover:text-[#FDD835] transition-colors duration-200">Dashboard</a>
+                  <a href="\app\Add-bloom\index.html" className="hover:underline hover:text-[#FDD835] transition-colors duration-200">Dashboard</a>
                   <a href="/data" className="hover:underline hover:text-[#FDD835] transition-colors duration-200">Data & APIs</a>
                 </div>
 
