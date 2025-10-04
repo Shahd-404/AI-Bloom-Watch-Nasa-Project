@@ -5,8 +5,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Important for GitHub Pages (no Image Optimization)
   },
-  basePath: process.env.NODE_ENV === "production" ? "Elite-Team" : "",
-  assetPrefix: process.env.NODE_ENV === "production" ? "Elite-Team" : "",
+  basePath: process.env.NODE_ENV === "production" ? "/Elite-Team" : "",
+  assetPrefix: process.env.NODE_ENV === "production" ? "/Elite-Team" : "",
 };
 
 export default nextConfig;
