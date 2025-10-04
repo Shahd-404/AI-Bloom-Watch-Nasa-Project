@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloomWatch: Monitoring Aquatic Health</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+<header class="navbar">
+    <div class="logo">
+        <img src="image/logo.jpg" alt="BloomTrack Logo" class="logo-img"> 
+        BloomTrack
+    </div>
+    <div class="nav-links">
+    </div>
+    <div class="nav-actions">
+        <a href="#" class="btn btn-submit">Add Your Bloom</a>
+    </div>
+</header>
+
+    <section class="hero-title-section">
+        <h1 class="hero-title">BloomWatch: <span style="color: var(--pink-accent);"> The Pulse of Earth's Vegetation</h1>
+        <p class="hero-subtitle">Join the global citizen science effort. Track when, where, and how Earth's plants bloom to predict harvests and manage ecosystems.</p>
+
+        <div class="hero-actions">
+            <a href="#observation-form-anchor" class="btn-main btn-primary">Add Your Ground Truth Observation</a>
+            <a href="#cards-sec" class="btn-main btn-secondary">Features</a>
+        </div>
+        
+        <p style="color: var(--grey-text); font-size: 0.8em; margin-top: 10px;">
+    Leveraging the successful global Citizen Science model, inspired by the GLOBE program, <br>
+    to ensure the highest accuracy of bloom data within your local region.
+</p>
+    </section>
+    
+    <section class="cards-section" id="cards-sec">
+    <h2 class="section-title">What You Can Do</h2>
+    <div class="cards-container">
+        <div class="card">
+            <div class="card-image-container">
+                <img src="image/image1.jpg" alt="Field observation of flowering plants" class="card-image">
+            </div>
+            <div class="card-content">
+                <h3>Ground Truth Observation</h3>
+                <p>Document plant bloom presence, color, and coverage in your local area. Your reports provide critical validation data for our AI model and NASA scientists. </p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-image-container">
+                <img src="image/image2.jpg" alt="Satellite data fusion and analysis" class="card-image">
+            </div>
+            <div class="card-content">
+                <h3>AI Analysis & Predictive Forecasting</h3>
+                <p>We combine your community reports with NASA satellite imagery (Landsat) and AI models for comprehensive, real-time bloom detection and phenology forecasting</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image-container">
+                <img src="image/imag3.jpg" alt="Farmer checking a crop or environmental scientist" class="card-image">
+            </div>
+            <div class="card-content">
+                <h3>Actionable Insights & Impact</h3>
+                <p>Our data translates into practical solutions for three key areas: Agriculture (predicting harvest times), Environment (tracking invasive species), and Public Health (monitoring pollen sources).</p>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <section class="observation-section" id="observation-form-anchor">
+        <div class="main-container">
+            <div class="left-panel-wrapper">
+                <div class="panel-container">
+                    <h2>Submit New Bloom Observation</h2>
+                    <p class="description">Help us validate NASA data! Your report is critical for global bloom analysis and accuracy.</p>
+                    <form id="observation-form">
+                        
+                       <div class="form-group" id="group-genus-species">
+                          <label for="genus-species">Bloom Type / Plant Species</label>
+                          <input type="text" id="genus-species" list="species-list" class="form-control" placeholder="e.g., Cotton Crop, Wildflower, Apple Tree">
+    
+                        <datalist id="species-list">
+                            <option value="Wildflowers (General Bloom)">
+                            <option value="Desert Bloom (After Rain Event)">
+                            <option value="Agricultural Crop (Flowering Stage)">
+                            <option value="Fruit/Nut Tree Bloom">
+                            <option value="Grass/Weed Bloom (Pollen Source)">
+                            <option value="Invasive Species (If Known)">
+                            <option value="Other / Unknown Plant Bloom">
+                          </datalist>
+                    </div>
+                        
+
+                        <div class="form-group">
+                            <label>Observed Bloom Color</label>
+                            <div class="color-options">
+                                <div class="color-circle blue selected"></div> <div class="color-circle purple"></div>
+                                <div class="color-circle green"></div>
+                                <div class="color-circle orange"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group slider-group">
+                            <label for="percent-blooming">Percent Surface Coverage (%)</label><span class="slider-value">50%</span>
+                            <input type="range" min="0" max="100" value="50" class="slider" id="percent-blooming">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Photo Upload</label>
+                            <div class="photo-upload-box" onclick="document.getElementById('photo-input').click()">
+                                <i class="fas fa-cloud-upload-alt"></i><p>Drag & drop photos here</p><p>or click to upload</p>
+                                <input type="file" id="photo-input" accept="image/*" multiple style="display:none">
+                            </div>
+                            <div id="photo-preview"></div>
+                        </div>
+                        
+                        <div class="form-group" id="group-location">
+                            <label>Location (GPS/Map Click required)</label>
+                            <div class="location-group">
+                                <input type="text" id="location-input" placeholder="Latitude, Longitude" class="form-control" readonly>
+                                <button type="button" class="use-gps-btn" id="use-gps">Use GPS</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" id="group-date">
+                            <div class="datetime-group">
+                                <div id="sub-group-date">
+                                    <label for="date">Date</label><input type="date" id="date" class="form-control">
+                                </div>
+                                <div id="sub-group-time">
+                                    <label for="time">Time</label><input type="time" id="time" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="notes">Additional Notes</label>
+                            <textarea id="notes" class="form-control text-area-control" placeholder="Any additional details about the bloom or water conditions..."></textarea>
+                        </div>
+                        
+                        <div class="checkbox-group" id="group-pledge">
+                            <input type="checkbox" id="pledge-checkbox">
+                            <label for="pledge-checkbox">I pledge to observe responsibly and contribute accurate bloom data.</label>
+                        </div>
+                        
+                        <div class="buttons-group">
+                            <button type="button" class="btn btn-grey" id="save-draft-btn">Save Draft</button>
+                            <button type="button" class="btn btn-blue" id="submit-btn">Submit Observation</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="right-panel-wrapper">
+                <div class="panel-container">
+                    <h2>Live Bloom Map</h2>
+                    <p class="description">See your bloom report and nearby activity.</p>
+                    
+                    <div class="map-container" id="map"></div>
+                    
+                    <div class="map-layers">
+                        <div class="option" data-layer-key="satellite">
+                            <span>Satellite Imagery</span>
+                            <label class="toggle-switch"><input type="checkbox" id="toggle-satellite"><span class="toggle-slider"></span></label>
+                        </div>
+                        <div class="option" data-layer-key="hotspots">
+                            <span>Bloom Hotspots</span>
+                            <label class="toggle-switch"><input type="checkbox" id="toggle-hotspots"><span class="toggle-slider"></span></label>
+                        </div>
+                        <div class="option" data-layer-key="user-obs">
+                            <span>User Reports</span>
+                            <label class="toggle-switch"><input type="checkbox" id="toggle-user-obs"><span class="toggle-slider"></span></label>
+                        </div>
+                    </div>
+                    
+                    <div class="legend">
+                        <p>Legend</p>
+                        <div id="hotspots-legend-group" style="display: none;">
+                            <div class="legend-item" data-layer="hotspots"><span class="legend-color vhigh"></span><span>Very High Density</span></div>
+                            <div class="legend-item" data-layer="hotspots"><span class="legend-color high"></span><span>High Density</span></div>
+                            <div class="legend-item" data-layer="hotspots"><span class="legend-color medium"></span><span>Medium Density</span></div>
+                            <div class="legend-item" data-layer="hotspots"><span class="legend-color low"></span><span>Low Density</span></div>
+                        </div>
+                        <div class="legend-item" data-layer="user-observation">
+                            <span class="legend-color legend-pin"></span><span>Your Report Pin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div id="toast-container"></div>
+    
+    <div id="image-modal" class="image-modal">
+        <span class="modal-close" id="modal-close">&times;</span><img class="image-modal-content" id="modal-image">
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+
+    <section class="nasa-data-section">
+    <div class="data-sources-container">
+        <h2 class="section-title">NASA Data Sources</h2>
+        <div class="data-cards-container">
+            
+            <a href="https://landsat.gsfc.nasa.gov/" target="_blank" class="data-card-link">
+                <div class="data-card">
+                    <div class="card-icon"><i class="fas fa-satellite-dish"></i></div>
+                    <div class="card-text">
+                        <h3>Landsat</h3>
+                        <p>— 50+ years of vegetation data</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="https://modis.gsfc.nasa.gov/" target="_blank" class="data-card-link">
+                <div class="data-card">
+                    <div class="card-icon"><i class="fas fa-globe-americas"></i></div>
+                    <div class="card-text">
+                        <h3>MODIS</h3>
+                        <p>Daily global coverage</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="https://jointmission.gsfc.nasa.gov/viirs.html" target="_blank" class="data-card-link">
+                <div class="data-card">
+                    <div class="card-icon"><i class="fas fa-moon"></i></div>
+                    <div class="card-text">
+                        <h3>VIIRS</h3>
+                        <p>Nighttime & atmospheric data</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="https://emit.jpl.nasa.gov/" target="_blank" class="data-card-link">
+                <div class="data-card">
+                    <div class="card-icon"><i class="fas fa-water"></i></div>
+                    <div class="card-text">
+                        <h3>EMIT</h3>
+                        <p>Ocean of atmospheric heath</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="https://aviris.jpl.nasa.gov/" target="_blank" class="data-card-link">
+                <div class="data-card">
+                    <div class="card-icon"><i class="fas fa-camera"></i></div>
+                    <div class="card-text">
+                        <h3>AVIRIS</h3>
+                        <p>Mineral & dust competrel imaging</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <span>NASA + BloomWatch</span>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

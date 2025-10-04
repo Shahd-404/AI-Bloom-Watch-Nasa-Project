@@ -21,15 +21,7 @@ bloom-trends-app/
       └─ StageTimeline.tsx
 
 
-bloom-trends-app/
-  src/
-    types.ts
-    lib/
-      data.ts
-    components/
-      StageTimeline.tsx
-      YearCompare.tsx
-      Controls.tsx
+
 
 
 npm i -D @vitejs/plugin-react
