@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.ipynb_checkpoints/
+
+# Envs
+.env
+.venv/
+venv/
+
+# Node/Frontend
+node_modules/
+dist/
+.build/
+.cache/
+
+# Data & artifacts
+data/
+datasets/
+outputs/
+checkpoints/
+logs/
+*.log
+
+# OS/IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Big model files (سنستخدم LFS ليها)
+*.joblib
+*.pkl
+*.pt
+*.h5
+*.onnx
+*.zip
+*.7z
+*.rar
