@@ -27,7 +27,12 @@ import {
 
 const HomePage = () => {
   const [showContent, setShowContent] = useState(false);
-  const [modalContent, setModalContent] = useState(null);
+  type ModalContent = {
+    imageSrc: string;
+    altText: string;
+  } | null;
+  
+  const [modalContent, setModalContent] = useState<ModalContent>(null);
 
   const phenologyStages = [
     {
