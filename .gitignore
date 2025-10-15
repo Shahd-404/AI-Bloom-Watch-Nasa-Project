@@ -1,41 +1,24 @@
+# تعميم لكل البروجكتات
+**/node_modules/
+**/.vite/
+**/dist/
+**/build/
+**/.cache/
+**/.parcel-cache/
+
 # Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.ipynb_checkpoints/
+**/.venv/
+**/__pycache__/
+*.py[cod]
+*.egg-info/
 
-# Envs
+# بيئة وتشغيل
 .env
-.venv/
-venv/
-
-# Node/Frontend
-node_modules/
-dist/
-.build/
-.cache/
-
-# Data & artifacts
-data/
-datasets/
-outputs/
-checkpoints/
-logs/
+.env.*
 *.log
 
-# OS/IDE
-.DS_Store
-Thumbs.db
+# IDE/OS
 .vscode/
 .idea/
-
-# Big model files (سنستخدم LFS ليها)
-*.joblib
-*.pkl
-*.pt
-*.h5
-*.onnx
-*.zip
-*.7z
-*.rar
+.DS_Store
+Thumbs.db
