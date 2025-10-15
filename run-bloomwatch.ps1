@@ -23,8 +23,7 @@ $PORT_API      = 8000
 # -------------- متغيرات البيئة (عدّلي حسب مساراتك) --------------
 $env:MODEL_GATE_PATH  = "F:\Nasa project\Bloom_model\gate_bloom_binary.joblib"
 $env:MODEL_STAGE_PATH = "F:\Nasa project\Bloom_model\stage_multiclass.joblib"
-# مفتاح OpenRouter (اختياري لو بتستخدمي التلميع اللغوي):
-# $env:OPENROUTER_API_KEY = "PUT_YOUR_KEY_HERE"
+$env:OPENROUTER_API_KEY = "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"
 
 # -------------- Helpers --------------
 function Stop-Port($port) {
